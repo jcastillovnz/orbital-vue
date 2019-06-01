@@ -272,10 +272,10 @@ html += '<img class="threesixty-frame renders" style="visibility:' +display + ';
                 typeof document.ontouchend !== 'undefined' &&
                 typeof document.ontouchcancel !== 'undefined'){
                 var elem = $this.get()[0];
-                elem.addEventListener('touchstart', that.onTouchStart);
-                elem.addEventListener('touchmove', that.onTouchMove);
-                elem.addEventListener('touchend', that.onTouchEnd);
-                elem.addEventListener('touchcancel', that.onTouchEnd);
+                elem.addEventListener('touchstart', that.onTouchStart,{passive: true});
+                elem.addEventListener('touchmove', that.onTouchMove,{passive: true});
+                elem.addEventListener('touchend', that.onTouchEnd,{passive: true});
+                elem.addEventListener('touchcancel', that.onTouchEnd,{passive: true});
             }
         }
 
@@ -635,12 +635,3 @@ var newheight =  parseInt(currheight)  + amount;
 
 </script>
 
-<style type="text/css">
-  
-body {
-cursor: context-menu;
-
-}
-
-    
-</style>

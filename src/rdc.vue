@@ -1,7 +1,7 @@
 <template>
   <div >
 
-<div     align="center" class="threesixty-wrapper">
+<div   align="center" class="threesixty-wrapper">
 
 
 <div  class="threesixty" id="{index}" data-path="/src/assets/img/rdc/renders/{index}.jpg" data-count="31">
@@ -275,10 +275,10 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
                 typeof document.ontouchend !== 'undefined' &&
                 typeof document.ontouchcancel !== 'undefined'){
                 var elem = $this.get()[0];
-                elem.addEventListener('touchstart', that.onTouchStart);
-                elem.addEventListener('touchmove', that.onTouchMove);
-                elem.addEventListener('touchend', that.onTouchEnd);
-                elem.addEventListener('touchcancel', that.onTouchEnd);
+                elem.addEventListener('touchstart', that.onTouchStart ,{passive: true});
+                elem.addEventListener('touchmove', that.onTouchMove,{passive: true});
+                elem.addEventListener('touchend', that.onTouchEnd,{passive: true});
+                elem.addEventListener('touchcancel', that.onTouchEnd,{passive: true});
             }
         }
 
@@ -324,7 +324,7 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
     };
 
     ThreeSixty.prototype.onTouchMove = function(e) {
-        e.preventDefault();
+/*        e.preventDefault();*/
         var touch = e.touches[0];
         scope.onMove(touch.pageX, touch.pageY);
 
@@ -335,6 +335,9 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
     };
 
     ThreeSixty.prototype.onMove = function(screenX, screenY){
+
+canvas()
+
         if(isMouseDown){
             var x = screenX,
                 y = screenY,
@@ -384,23 +387,32 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
     };
 
 
-
+window.onload = function(e) {
+canvas(e);
+};
 
 
 
 function canvas(e) {
+
 var img= document.getElementById('true');
 
 img.addEventListener('mousemove', function (e) {
-let ctx;
+
+
+var ctx;
 this.canvas = document.createElement('canvas');
 this.canvas.width = this.width ;
 this.canvas.height = this.height;
-ctx=this.canvas.getContext('2d');
-ctx.drawImage(this, 0, 0, this.width, this.height);
+ ctx=this.canvas.getContext('2d');
+ ctx.drawImage(this, 0, 0, this.width, this.height);
 const pixel = ctx.getImageData(e.offsetX, e.offsetY, 1, 1).data;
-detectar_color(ctx,e,img);   
-});
+  
+detectar_color(ctx,e,img);
+
+} ,{passive: true} );
+
+
 
 }
 
@@ -759,11 +771,6 @@ highlights_B09.style.visibility = "hidden";
 
 
 
-
-
-
-
-
 if (hex==="#000000") {
 
 document.getElementById("true").setAttribute('title', ''); 
@@ -967,7 +974,37 @@ var newheight =  parseInt(currheight)  + amount;
 
 
 
-}}
+}
+,
+  // define methods under the `methods` object
+  methods: {
+  llamada: function () {
+
+
+
+
+console.log("se mueve")
+
+
+
+    },
+    tocando: function () {
+
+
+
+
+console.log("se toca")
+
+
+
+    }
+
+
+
+
+  }
+
+}
 
 
 
