@@ -1,3 +1,5 @@
+
+
 @charset "utf-8";
 
 :root {
@@ -15,6 +17,8 @@
 }
 
 html {
+
+
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -34,6 +38,8 @@ html {
 }
 
 body {
+
+    cursor: context-menu;
     margin: 0;
     font-family:"Roboto";
     font-size: 1rem;
@@ -728,6 +734,12 @@ h2#debug {
         height: calc(100vh - 100px - 2vh);
         left: 25px;
     }
+
+
+
+
+
+
 
 }
 

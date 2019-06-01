@@ -9,9 +9,7 @@
     <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
   
   </p>
-  <!-- route outlet -->
-  <!-- component matched by the route will render here -->
-  <router-view></router-view>
+
 
 
   </div>

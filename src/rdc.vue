@@ -314,13 +314,13 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
         //e.preventDefault();
         $downElem = $(e.target).parent();
         thisTotal = $downElem.data('count');
-        startX = touch.pageX;
-        startY = touch.pageY;
-        lastVal = $downElem.data('lastVal') || 0;
-        lastX = $downElem.data('lastX') || 0;
-        lastY = $downElem.data('lastY') || 0;
-        isMouseDown = true;
-        $downElem.trigger('down');
+        var startX = touch.pageX;
+        var startY = touch.pageY;
+        var lastVal = $downElem.data('lastVal') || 0;
+        var lastX = $downElem.data('lastX') || 0;
+        var lastY = $downElem.data('lastY') || 0;
+         isMouseDown = true;
+         $downElem.trigger('down');
     };
 
     ThreeSixty.prototype.onTouchMove = function(e) {
@@ -388,13 +388,8 @@ html += '<img class="highlights center"     style="visibility:' + none + ';" dat
 
 
 
-
 function canvas(e) {
- 
-
-
 var img= document.getElementById('true');
-
 
 img.addEventListener('mousemove', function (e) {
 let ctx;
@@ -989,3 +984,8 @@ var newheight =  parseInt(currheight)  + amount;
 
 
 </script>
+<style type="text/css">
+  
+
+    
+</style>

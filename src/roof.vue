@@ -637,10 +637,10 @@ var newheight =  parseInt(currheight)  + amount;
 
 <style type="text/css">
   
+body {
+cursor: context-menu;
 
+}
 
-
-
-
-
+    
 </style>

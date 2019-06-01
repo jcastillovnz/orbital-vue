@@ -22,6 +22,7 @@ const routes = [
   { path: '/2-etage', component: etage2 },
   { path: '/1-etage', component: etage1 },
   { path: '/rdc', component: rdc },
+  
 
 ]
 
