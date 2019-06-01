@@ -236,7 +236,6 @@ var path_highlights_B09="/src/assets/img/rdc/highlights/B09/"
 var extencion=".png"
 html += '<img class="threesixty-frame renders" style="visibility:' +display + ';" data-index="' + i + '"  id="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/>';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 html += '<img class="masks center" alt="'+i+'" crossOrigin = "Anonymous"  style="visibility:' + display + ';" id="true"     data-index="' + i + '"   src="' + path_masks+''+i+extencion+'"/>';
 
 html += '<img class="highlights center"     style="visibility:' + none + ';" data-index="' + i + '"  id="highlights_B01_' + i + '" src="' + path_highlights_B01+''+i+extencion+'"/>';
@@ -387,9 +386,9 @@ canvas()
     };
 
 
-window.onload = function(e) {
+/*window.onload = function(e) {
 canvas(e);
-};
+};*/
 
 
 
